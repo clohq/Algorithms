@@ -17,7 +17,7 @@ public class FindReset {
 	public static int binaryFindReset(int[] inputs, int start, int end) {
 		
 		if(start + 1 == end && inputs[start] > inputs[end]) {
-			return inputs[end];
+			return end;
 		}
 
 		if(inputs[start] < inputs[end]) {
