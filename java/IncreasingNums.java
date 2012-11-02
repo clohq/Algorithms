@@ -1,3 +1,10 @@
+/*
+
+Find 3 numbers in increasing order in a given array
+
+*/
+
+
 public class IncreasingNums {
 	
 	//public static int a[] = {2,3,1,2,6};
