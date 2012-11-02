@@ -9,6 +9,11 @@ public class MinCoins {
 		int[] coins = {1,8,10};
 		int sum = 64;
 
+		System.out.println(findMinCoins(coins, sum));
+	}
+
+	public static int findMinCoins(int[] coins, int sum) {
+
 		int[] min = new int[sum + 1];
 
 		min[0] = 0;
@@ -25,6 +30,7 @@ public class MinCoins {
 			}
 		}
 
-		System.out.println(min[sum]);
+		return min[sum];
+
 	}
 }
