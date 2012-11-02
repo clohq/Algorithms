@@ -21,7 +21,6 @@ public class MinCoins {
 					continue;
 				if(min[previousSum] + 1 < min[subSum]) {
 					min[subSum] = min[previousSum] + 1;
-					System.out.println(subSum + " : " + coin + " : " + min[subSum]);
 				}
 			}
 		}
