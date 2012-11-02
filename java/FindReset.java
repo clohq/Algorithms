@@ -10,11 +10,11 @@ public class FindReset {
 		int[] inputs = {7,1,2,3,4,5,6};
 		int length = inputs.length;
 
-		int output = binaryFindRest(inputs, 0,length-1);
+		int output = binaryFindReset(inputs, 0,length-1);
 		System.out.println(output);
 	}
 
-	public static int binaryFindRest(int[] inputs, int start, int end) {
+	public static int binaryFindReset(int[] inputs, int start, int end) {
 		
 		if(start + 1 == end && inputs[start] > inputs[end]) {
 			return inputs[end];
@@ -27,9 +27,9 @@ public class FindReset {
 		int mid = (start + end) / 2;
 
 		if(inputs[start] > inputs[mid]) {
-			return binaryFindRest(inputs, start, mid);
+			return binaryFindReset(inputs, start, mid);
 		} else {
-			return binaryFindRest(inputs, mid, end);
+			return binaryFindReset(inputs, mid, end);
 		}
 	}
 }
