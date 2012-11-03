@@ -8,7 +8,7 @@ import java.util.*;
 
 public class TernarySubstring {
 	public static void main(String[] args) {
-		System.out.println(numberOfSubstrings("abc"));
+		System.out.println(numberOfSubstrings("baaccb"));
 	}
 
 	static int numberOfSubstrings(String A) {
