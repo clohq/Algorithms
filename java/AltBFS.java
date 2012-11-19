@@ -6,6 +6,7 @@ Print Tree in a zigzag BFS style.
 
 import java.util.Stack;
 
+
 public class AltBFS {
 	public static void main(String[] args) {
 		TreeNode head = getTree();
