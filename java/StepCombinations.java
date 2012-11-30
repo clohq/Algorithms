@@ -11,7 +11,11 @@ public class StepCombinations {
 		int[] steps = {1,2,3};
 		int destination = 7;
 
-		for(String combination : findStepCombinations(destination, steps)) {
+		LinkedList<String> result = findStepCombinations(destination, steps);
+
+		System.out.println(result.size());
+
+		for(String combination : result) {
 			System.out.println(combination);
 		}
 	}
