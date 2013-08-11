@@ -7,7 +7,7 @@ A sorted array has been rotated so that the elements might appear in the order 3
 public class FindReset {
 	
 	public static void main(String args[]) {
-		int[] inputs = {7,1,2,3,4,5,6};
+		int[] inputs = {7,8,9,10,1,2,3,4,5,6};
 		int length = inputs.length;
 
 		int output = binaryFindReset(inputs, 0,length-1);
@@ -16,6 +16,7 @@ public class FindReset {
 
 	public static int binaryFindReset(int[] inputs, int start, int end) {
 		
+		System.out.println(start + " : " + end);
 		if(start + 1 == end && inputs[start] > inputs[end]) {
 			return end;
 		}
