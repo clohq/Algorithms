@@ -9,10 +9,10 @@ import java.util.Stack;
 
 public class AltBFS {
 	public static void main(String[] args) {
-		TreeNode head = getTree();
+		TreeNode1 head = getTree();
 
-		Stack<TreeNode> leftStack = new Stack<TreeNode>();		
-		Stack<TreeNode> rightStack = new Stack<TreeNode>();		
+		Stack<TreeNode1> leftStack = new Stack<TreeNode1>();
+		Stack<TreeNode1> rightStack = new Stack<TreeNode1>();		
 		
 		rightStack.push(head);
 		System.out.println(head.getValue());
@@ -20,7 +20,7 @@ public class AltBFS {
 		while(!rightStack.isEmpty() || !leftStack.isEmpty()) {
 
 			while(!rightStack.isEmpty()) {
-				TreeNode node = rightStack.pop();
+				TreeNode1 node = rightStack.pop();
 				if(node.right!= null) {
 					System.out.println(node.right.getValue());
 					leftStack.push(node.right);
@@ -32,7 +32,7 @@ public class AltBFS {
 			}
 
 			while(!leftStack.isEmpty()) {
-				TreeNode node = leftStack.pop();
+				TreeNode1 node = leftStack.pop();
 				if(node.left!= null) {
 					System.out.println(node.left.getValue());
 					rightStack.push(node.left);
@@ -45,47 +45,47 @@ public class AltBFS {
 		}
 	}
 
-	public static TreeNode getTree() {
+	public static TreeNode1 getTree() {
 		
 		//
-		TreeNode head = new TreeNode(10);
+		TreeNode1 head = new TreeNode1(10);
 
 		///
-		head.left= new TreeNode(30);
-		head.right= new TreeNode(20);
+		head.left = new TreeNode1(30);
+		head.right = new TreeNode1(20);
 
 		////
 
-		head.left.left= new TreeNode(40);
-		head.left.right= new TreeNode(50);
+		head.left.left = new TreeNode1(40);
+		head.left.right = new TreeNode1(50);
 
-		head.right.left= new TreeNode(60);
-		head.right.right= new TreeNode(70);
+		head.right.left = new TreeNode1(60);
+		head.right.right = new TreeNode1(70);
 
 		/////
 
-		head.left.left.left= new TreeNode(150);
-		head.left.left.right= new TreeNode(140);
+		head.left.left.left = new TreeNode1(150);
+		head.left.left.right = new TreeNode1(140);
 
-		head.left.right.left= new TreeNode(130);
-		head.left.right.right= new TreeNode(120);
+		head.left.right.left = new TreeNode1(130);
+		head.left.right.right = new TreeNode1(120);
 
-		head.right.left.left= new TreeNode(110);
-		head.right.left.right= new TreeNode(100);
+		head.right.left.left = new TreeNode1(110);
+		head.right.left.right = new TreeNode1(100);
 
-		head.right.right.left= new TreeNode(90);
-		head.right.right.right= new TreeNode(80);
+		head.right.right.left = new TreeNode1(90);
+		head.right.right.right = new TreeNode1(80);
 
 		return head;
 	}
 }
 
-class TreeNode {
+class TreeNode1 {
+	public TreeNode1 left = null;
+	public TreeNode1 right = null;
 	private int value;
-	public TreeNode left = null;
-	public TreeNode right = null;
 
-	public TreeNode(int value) {
+	public TreeNode1(int value) {
 		this.value = value;
 	}
 

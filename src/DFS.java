@@ -2,31 +2,31 @@
 	DFS
 */
 
-class TreeNode {
+class TreeNode2 {
 	int value;
-	TreeNode left, right;
+	TreeNode2 left, right;
 
-	public TreeNode(int value) {
+	public TreeNode2(int value) {
 		this.value = value;
 	}
 }
 
 public class DFS {
 	public static void main(String args[]) {
-		TreeNode head = new TreeNode(10);
+		TreeNode2 head = new TreeNode2(10);
 
-		head.left = new TreeNode(20);
-		head.right = new TreeNode(30);
+		head.left = new TreeNode2(20);
+		head.right = new TreeNode2(30);
 
-		head.left.left = new TreeNode(40);
-		head.left.right = new TreeNode(50);
-		head.right.left = new TreeNode(60);
-		head.right.right = new TreeNode(70);
+		head.left.left = new TreeNode2(40);
+		head.left.right = new TreeNode2(50);
+		head.right.left = new TreeNode2(60);
+		head.right.right = new TreeNode2(70);
 
 		printDFS(head);
 	}
 
-	public static void printDFS(TreeNode head) {
+	public static void printDFS(TreeNode2 head) {
 		if(head != null) {
 			System.out.println(head.value);
 			printDFS(head.left);

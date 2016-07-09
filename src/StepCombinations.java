@@ -4,14 +4,16 @@ Print all combinations of steps 1,2,3 to reach 100 steps
 
 */
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class StepCombinations {
 	public static void main(String[] args) {
 		int[] steps = {1,2,3};
 		int destination = 7;
 
-		LinkedList<String> result = findStepCombinations(destination, steps);
+		List<String> result = findStepCombinations(destination, steps);
 
 		System.out.println(result.size());
 
@@ -20,15 +22,15 @@ public class StepCombinations {
 		}
 	}
 
-	public static LinkedList<String> findStepCombinations(int destination, int[] steps) {
+	public static List<String> findStepCombinations(int destination, int[] steps) {
 
-		HashMap<Integer, LinkedList<String>> store = new HashMap<Integer, LinkedList<String>>();
+		HashMap<Integer, List<String>> store = new HashMap<>();
 
 		for(int i = 1; i<=destination; i++) {
 	
 			System.out.println("Destination : " + i);
 
-			LinkedList<String> result = new LinkedList<String>();
+			List<String> result = new LinkedList<>();
 			
 			if(i == 1) {
 				result.add("1");
@@ -43,7 +45,7 @@ public class StepCombinations {
 				}
 
 				if(i > step) {
-					LinkedList<String> combinations = store.get(i - step);
+					List<String> combinations = store.get(i - step);
 					for(String combination : combinations) {
 						result.add(combination + step);
 					}

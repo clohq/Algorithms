@@ -6,21 +6,21 @@
 
 public class FindSibling {
 	public static void main(String[] args) {
-		TreeNode head = new TreeNode(10, null);
-		head.left = new TreeNode(20, head);
-		head.right = new TreeNode(30, head);
+		TreeNode3 head = new TreeNode3(10, null);
+		head.left = new TreeNode3(20, head);
+		head.right = new TreeNode3(30, head);
 
-		head.left.left = new TreeNode(40, head.left);
-		head.right.left = new TreeNode(45, head.right);
-		head.right.right = new TreeNode(50, head.right);
+		head.left.left = new TreeNode3(40, head.left);
+		head.right.left = new TreeNode3(45, head.right);
+		head.right.right = new TreeNode3(50, head.right);
 
-		head.left.left.right = new TreeNode(31, head.left.left);
-		head.right.right.left = new TreeNode(32, head.left.left);
-		head.right.right.right = new TreeNode(33, head.left.left);
+		head.left.left.right = new TreeNode3(31, head.left.left);
+		head.right.right.left = new TreeNode3(32, head.left.left);
+		head.right.right.right = new TreeNode3(33, head.left.left);
 
-		TreeNode input = head.left.left.right;
+		TreeNode3 input = head.left.left.right;
 
-		TreeNode output = findSibling(input);
+		TreeNode3 output = findSibling(input);
 
 		if(output == null) {
 			System.out.println("No sibling found");
@@ -29,27 +29,27 @@ public class FindSibling {
 		}
 	}
 
-	public static TreeNode findSibling(TreeNode input) {
+	public static TreeNode3 findSibling(TreeNode3 input) {
 
-		TreeNode temp = input;
+		TreeNode3 temp = input;
 
-		TreeNode result = null;
+		TreeNode3 result = null;
 
 		int level = 0;
 
 		while(temp.parent != null) {
 
-			TreeNode parent = temp.parent;
+			TreeNode3 parent = temp.parent;
 			level ++;
 				
 			if(parent.right != null && parent.right != temp) {
 
 				int tempLevel = level - 1;
 
-				TreeNode temp1 = parent.right;
+				TreeNode3 temp1 = parent.right;
 
-				TreeNode current = temp1;
-				TreeNode previous = temp1;
+				TreeNode3 current = temp1;
+				TreeNode3 previous = temp1;
 
 				while(current != null && tempLevel != 0 && tempLevel < level) {
 
@@ -80,11 +80,11 @@ public class FindSibling {
 	}
 }
 
-class TreeNode {
+class TreeNode3 {
 	int value;
-	TreeNode left, right, parent;
+	TreeNode3 left, right, parent;
 
-	public TreeNode(int value, TreeNode parent) { 
+	public TreeNode3(int value, TreeNode3 parent) { 
 		this.value = value;
 		this.parent = parent;
 	}
